@@ -26,8 +26,6 @@ pub fn wasm_avg_goals(results: &JsValue) {
 	let mut highGs = -1.0; 
 	let mut winnerTeam = String::new();
 
-	// let mut avgGoalsPerTeam = &teamVec.iter().map(|x| getAvgGoals(x)).collect::<Vec<f32>>();
-
 	for team in teamVec { 
 
 		let mut avgGoalsPerTeam = getAvgGoals(&team);
@@ -37,14 +35,14 @@ pub fn wasm_avg_goals(results: &JsValue) {
 			highGs = avgGoalsPerTeam;
 		}
 	}
-	println!("{} is the best team", winnerTeam);
-	println!("{} with an average goals of", highGs);
+	web_sys::console::log_2(&"The best team is".into(), &JsValue::from_serde(&winnerTeam).unwrap());
+	web_sys::console::log_2(&"with an average goals of".into(), &JsValue::from_serde(&highGs).unwrap());
 }
 
 pub fn getAvgGoals(team: &Team) -> f32 { 
 
 	let mut totalGoals = 0.0;
-	for i in 0..14 { 
+	for i in 0..15 { 
 		let mut goals = team.players[i].goals;
 		totalGoals = totalGoals + goals;
 	}
