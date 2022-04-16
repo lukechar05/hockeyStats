@@ -15,10 +15,9 @@ def root_page():
 if __name__ == "__main__":
 	app.run()
 
-# make ru
 
 
-
+# List of all hockey teams 
 hockeyTeams = ["meerkats", "elephants", "antelopes", "seals", "seagulls", "starfish", "deer", "rabbits", "squirrels", "flamingos", "salamanders", "cranes"]
 
 
@@ -36,7 +35,8 @@ def getPlayerStats(team_name):
 	else: 
 		random.seed(team_name)
 		listOfPlayers = []
-
+		
+		# Defense
 		for i in range(6): 
 			playerName = ''.join(random.choice(string.ascii_lowercase) for x in range(random.randint(4, 8)))
 			pos = "D"
@@ -50,6 +50,7 @@ def getPlayerStats(team_name):
 
 			})
 		
+		# Center
 		for i in range(3):
 			playerName = ''.join(random.choice(string.ascii_lowercase) for x in range(random.randint(4, 8)))
 			pos = "C"
@@ -63,6 +64,7 @@ def getPlayerStats(team_name):
 
 			})
 
+		# Wingers
 		for i in range(6):
 			playerName = ''.join(random.choice(string.ascii_lowercase) for x in range(random.randint(4, 8)))
 			pos = ""

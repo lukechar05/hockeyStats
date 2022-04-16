@@ -28,7 +28,7 @@ pub fn wasm_avg_goals(results: &JsValue) {
 
 	for team in teamVec { 
 
-		let mut avgGoalsPerTeam = getAvgGoals(&team);
+		let mut avgGoalsPerTeam = getAverage(&team);
 
 		if avgGoalsPerTeam > highGs { 
 			winnerTeam = team.name; 
@@ -39,7 +39,7 @@ pub fn wasm_avg_goals(results: &JsValue) {
 	web_sys::console::log_2(&"with an average goals of".into(), &JsValue::from_serde(&highGs).unwrap());
 }
 
-pub fn getAvgGoals(team: &Team) -> f32 { 
+pub fn getAverage(team: &Team) -> f32 { 
 
 	let mut totalGoals = 0.0;
 	for i in 0..15 { 
@@ -50,6 +50,7 @@ pub fn getAvgGoals(team: &Team) -> f32 {
 }
 
 
+//  Make some javascripty some crabby rusty 
 pub fn processAs(val: &JsValue) -> Vec<Team> { 
 
 	match val.into_serde::<Vec<Team>>() { 

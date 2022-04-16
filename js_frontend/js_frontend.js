@@ -28,16 +28,23 @@ class Player {
 
 export function process_all_teams(func) {
 
+
+    // Get all the teams
     fetch("/teams")
     .then((response) => {
         return response.json();
     })
     .then((result) => {
+
+        // GOATED LINE OF CODE. MAP 15 players to each team and get that whole biddie in a json 
         Promise.all(result.map(team => fetch("/teams/" + team).then(response => response.json())))
         .then((filledTeams) => { 
             let playersArray = []; 
+
             for (var x = 0; x < result.length; x++) {
                 for (var i = 0; i < 15; i++) { 
+
+                    // Create player object and add it 15 times
                     let newPlayer = new Player(filledTeams[x][i].name, filledTeams[x][i].position, filledTeams[x][i].goals, filledTeams[x][i].assists);
                     playersArray.push(newPlayer);
                     
@@ -58,7 +65,6 @@ export function process_all_teams(func) {
         console.log("Error fetching teams");
     });
 }
-
 
 export function js_avg_goals(results) {
 
