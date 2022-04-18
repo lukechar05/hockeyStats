@@ -6,19 +6,23 @@ You must submit an information sheet with every assignment. Also be sure
 to submit all materials following the procedures described on the
 submission procedures page.
 
-Name:  
+Name:  Luke Charlesworth
 
-Lecture section:  
+Lecture section:  Monday Wednesday 3 - 4:15
 
-Recitation day and time:  
+Recitation day and time: Friday 3 - 3:50 
 
-Assignment #:  
+Assignment #:  4
 
-Program due date:  
+Program due date:  4/22/2022
 
-Handed in date:  
+Handed in date:  4/18/22
 
 Source code file name(s):
+js_frontend.js
+hockey.py 
+lib.rs 
+base.html
 
 
 
@@ -34,7 +38,7 @@ Other file name(s) (if relevant):
 
 
 
-Does your project run without error?:
+Does your project run without error?:Yes
 
 If not, what is/are the error(s) and which parts of your program run
 correctly?:
@@ -45,7 +49,7 @@ correctly?:
 
 
 
-Additional comments to the grader:
+Additional comments to the grader: Fun last proj
 
 
 
