@@ -26,6 +26,8 @@ def teamsList():
 	return json.dumps(hockeyTeams)
 
 
+# Used a dictionary to make it easy to parse on javascript side 
+
 @app.route('/teams/<team_name>', methods = ["GET"])
 def getPlayerStats(team_name):
 	if team_name not in hockeyTeams:

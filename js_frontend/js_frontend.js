@@ -49,6 +49,7 @@ export function process_all_teams(func) {
                     playersArray.push(newPlayer);
                     
                 }
+                //  Now you have 15 players which can make a full team 
                 let newTeam = new hockeyTeam(result[x], playersArray);
                 teams.push(newTeam);
                 playersArray = [];
@@ -61,25 +62,31 @@ export function process_all_teams(func) {
         })
     })
     
+    //  Catch any errors in this long block of code
     .catch(() => {
         console.log("Error fetching teams");
     });
 }
 
+//  Function to calculate the average goals in java script 
 export function js_avg_goals(results) {
 
 
     let highGs = -1;
     let winner = "";
+
+    // Loop throught all the teams
     for (var i = 0; i < results.length; i++) {
         
 		let totalGoals = 0
+        // Go through each player on the time and find this teams avg goals
 		for (var j = 0; j < 15; j++)
 		{   
 			totalGoals = totalGoals + results[i].players[j].goals;
 		}
 		let avgGoals = totalGoals / 15.0;
 
+        // If its higher than previous highestGoals set the 2 global variables as necessary 
         if(avgGoals > highGs)
         {
             highGs = avgGoals;
