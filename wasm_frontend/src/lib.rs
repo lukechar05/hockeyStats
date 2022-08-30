@@ -51,6 +51,12 @@ pub fn wasm_avg_goals(results: &JsValue) {
 // Function to input a team, loop through their players and get that teams average goals
 pub fn getAverage(team: &Team) -> f32 { 
 
+	let x = 5;
+	match x {
+    	5 => println!("It's 5!"),
+    	7 => println!("It's 7!"),
+	}
+
 	let mut totalGoals = 0.0;
 	for i in 0..15 { 
 		let mut goals = team.players[i].goals;
@@ -63,6 +69,8 @@ pub fn getAverage(team: &Team) -> f32 {
 //  Make some javascripty some crabby rusty 
 pub fn processAs(val: &JsValue) -> Vec<Team> { 
 
+	
+
 	match val.into_serde::<Vec<Team>>() { 
 
 		Ok(mut v) => { 
@@ -74,3 +82,5 @@ pub fn processAs(val: &JsValue) -> Vec<Team> {
 		}
 	}
 }
+
+
